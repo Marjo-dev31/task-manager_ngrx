@@ -22,5 +22,9 @@ export const taskReducer = createReducer(
         }
         return task
     })}
+  }),
+  on(TaskActions.completeTask, (state, { stateFilter })=> {
+    return { ...state, tasks: state.tasks.filter((task)=> task.completed === stateFilter)}
   })
+
 );

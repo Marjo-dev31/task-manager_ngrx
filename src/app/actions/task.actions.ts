@@ -6,6 +6,8 @@ export const addTask = createAction(
   props<{ task: Task }>()
 );
 
+export const loadTasks = createAction('[Task Component] LoadTasks');
+
 export const deleteTask = createAction(
   '[Task Component] Delete',
   props<{ taskId: number }>()
@@ -16,9 +18,7 @@ export const toggleTaskCompletion = createAction(
   props<{ taskId: number }>()
 );
 
-export const loadTasks = createAction('[Task Component] LoadTasks');
-
 export const completeTask = createAction(
   '[Task Component] CompleteTask',
-  props<{ taskId: number }>()
+  props<{ stateFilter: boolean }>()
 );

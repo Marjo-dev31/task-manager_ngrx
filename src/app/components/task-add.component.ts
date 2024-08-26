@@ -1,14 +1,16 @@
-//src/app/component/task-add.component.ts
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, NgModule } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from '../models/state.models';
 import * as TaskActions from '../actions/task.actions';
+import { AppState } from '../models/state.model';
+import { FormsModule } from '@angular/forms';
 
 let currentId = 1;
 
 @Component({
  selector: 'task-add',
- templateUrl: 'task-add.component.html',
+ standalone: true,
+ imports: [FormsModule],
+ templateUrl: './task-add.component.html',
 })
 export class TaskAddComponent {
  newTaskName: string = '';
